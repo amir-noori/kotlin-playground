@@ -1,19 +1,24 @@
+import org.gradle.kotlin.dsl.accessors.runtime.extensionOf
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.8.0"
     application
 }
 
 group = "me.user"
 version = "1.0-SNAPSHOT"
 
+
 repositories {
     mavenCentral()
+    google()
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("io.ktor:ktor-server-core:2.2.2")
+    implementation("io.ktor:ktor-server-netty:2.2.2")
+
     testImplementation(kotlin("test"))
 }
 
@@ -26,5 +31,5 @@ tasks.withType<KotlinCompile> {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("playground.ktor.Hello")
 }
