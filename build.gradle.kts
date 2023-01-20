@@ -8,6 +8,7 @@ plugins {
 group = "me.user"
 version = "1.0-SNAPSHOT"
 val ktorVersion = "2.2.2"
+val arrowVersion = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -18,6 +19,11 @@ repositories {
 }
 
 dependencies {
+
+    implementation("io.arrow-kt:arrow-core:$arrowVersion")
+    implementation("io.arrow-kt:arrow-fx-coroutines:$arrowVersion")
+
+
     implementation("io.ktor:ktor-server-core:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("io.ktor:ktor-serialization:$ktorVersion")
