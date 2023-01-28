@@ -1,4 +1,4 @@
-package playground.fp
+package playground.fpkotlin
 
 import arrow.core.None
 import arrow.core.Option

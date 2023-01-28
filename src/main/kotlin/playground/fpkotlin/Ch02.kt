@@ -1,4 +1,4 @@
-package playground.fp
+package playground.fpkotlin
 
 class Ch02 {
 
