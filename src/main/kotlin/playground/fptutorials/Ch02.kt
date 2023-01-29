@@ -99,9 +99,34 @@ fun <A, B> idLaw3(f: (A) -> B): (A) -> Boolean
  */
 
 
+// Fun is a morphism from A to B
+typealias Fun<A, B> = (A) -> B
+
+inline infix fun <A, B, C> Fun<B, C>.after(crossinline f: Fun<A, B>): Fun<A, C> =
+    { a -> this(f(a)) }
+
+
+
+/**
+ *
+ *    Types and Sets
+ *
+ */
+
+data class EVEN(val i: Int) {
+    fun next(): EVEN {
+        return EVEN(i + 2)
+    }
+}
+
+val TWO = EVEN(2)
+val FOUR = TWO.next()
+val SIX = FOUR.next()
+
+
+
 
 fun main() {
-
     fun double(x: Int): Int = x * 2
     fun triple(x: Int): Int = x * 3
     fun square(x: Int): Int = x * x
