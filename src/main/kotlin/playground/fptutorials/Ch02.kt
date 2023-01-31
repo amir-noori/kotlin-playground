@@ -59,7 +59,6 @@ fun <A, B, C, D> checkAssociativityLaw(
  *
  */
 
-fun <A> id(a: A): A = a
 
 fun <A, B> idLaw1(f: (A) -> B): (A) -> Boolean = { a ->
     /*

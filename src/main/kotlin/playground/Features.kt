@@ -134,3 +134,15 @@ public object either {
             }
         }, f = c, just = { it.right() })
 }
+
+
+/**
+ * infix pipe function
+ * example: listOf(1, 2, 3) pipe ::println
+ */
+infix fun <T> Iterable<T>.pipe(f: (T) -> Unit) =
+    this.forEach { f(it) }
+
+
+
+

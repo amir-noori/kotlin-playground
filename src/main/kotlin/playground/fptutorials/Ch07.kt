@@ -20,6 +20,8 @@ data class FCons<T>(
 ) : FList<T>()
 
 fun <T> fListOf(vararg items: T): FList<T> {
+    val a = List<Int>(10) {it -> it}
+    a.map {  }
     return FList.of(*items)
 }
 
